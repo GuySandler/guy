@@ -1,13 +1,17 @@
 use std::env;
 // use std::path::{PathBuf};
+use clap::Parser;
 use std::fs;
 // use std::fs::ReadDir;
 // use colored::Colorize;
-
+#[derive(Parser)]
+struct Cli {
+    command: String
+}
 fn main() {
-    // let args: Vec<String> = env::args().collect();
-    // let arg: &String = &args[1];
-    // println!("{}", arg);
+    let args = Cli::parse();
+    let arg: &String = &args[1];
+    println!("{}", arg);
 
     // lists of items
     let mut dirs : Vec<String> = vec![];
@@ -28,15 +32,20 @@ fn main() {
             }
         }
     }
-    // println!("{:?}", dirs);
-    // println!("{:?}", files);
+
     // format output
-    for item in dirs{
-        println!("📁: {}",item);
+    if arg != "dir" {  }
+    else {
+        for item in dirs{
+            println!("📁: {}",item);
+        }
     }
-    for item in files{
-        println!("📄: {}",item);
+
+    if arg == "dir" {  }
+    else {
+        for item in files
+        {
+            println!("📄: {}", item);
+        }
     }
-    // end
-    println!();
 }
