@@ -34,7 +34,7 @@
 ## ⚙️ Installation and Updating (Linux)
 Manual
 1. Download the latest .zip from [releases page](https://github.com/GuySandler/guy//releases)
-2. >sudo cp target/release/guy /usr/local/bin/
+2. >sudo cp ./guy /usr/local/bin/
 3. >sudo chmod +x /usr/local/bin/guy
 
 ## ▹ How to run it
