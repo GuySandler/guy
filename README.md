@@ -32,8 +32,13 @@
 ✏ A button to go back to the last folder (..)
 
 ## ⚙️ Installation and Updating (Linux)
-Manual
+### Using EZinstall
+1. in the same folder as the file guy run EZinstall.sh
+
+
+### Manual
 1. Download the latest .zip from [releases page](https://github.com/GuySandler/guy//releases)
+2. Extract it and open in terminal (you can delete it after installing)
 2. >sudo cp ./guy /usr/local/bin/
 3. >sudo chmod +x /usr/local/bin/guy
 

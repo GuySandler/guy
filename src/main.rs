@@ -1,21 +1,14 @@
 use std::env;
 // use std::path::{PathBuf};
-use clap::Parser;
 use std::fs;
+use std::process::exit;
+
 // use std::fs::ReadDir;
 // use colored::Colorize;
-#[derive(Parser)]
-struct Cli {
-    command: String
-}
 fn main() {
-    let args = Cli::parse();
-    let arg: &String = &args[1];
-    println!("{}", arg);
-
     // lists of items
-    let mut dirs : Vec<String> = vec![];
-    let mut files : Vec<String> = vec![];
+    let mut dirs: Vec<String> = vec![];
+    let mut files: Vec<String> = vec![];
 
     // getting files in dir
     let current_dir = env::current_dir().unwrap();
@@ -34,17 +27,32 @@ fn main() {
     }
 
     // format output
-    if arg != "dir" {  }
-    else {
-        for item in dirs{
-            println!("📁: {}",item);
+    let args: Vec<String> = env::args().collect();
+    if args.len() != 1 {
+        // check args
+        if args[1] == "dir" || args[1] == "fil" {} else {
+            println!("command not found");
+            exit(1);
+        }
+
+        // commands
+        if args[1] == "dir" {
+            for item in dirs {
+                println!("📁: {}", item);
+            }
+        }
+        if args[1] == "fil" {
+            for item in files
+            {
+                println!("📄: {}", item);
+            }
         }
     }
-
-    if arg == "dir" {  }
     else {
-        for item in files
-        {
+        for item in dirs {
+            println!("📁: {}", item);
+        }
+        for item in files {
             println!("📄: {}", item);
         }
     }
