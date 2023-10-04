@@ -5,4 +5,6 @@ edition = "2021"
 
 [dependencies]
 clearscreen = "2.0.1"
+crossterm = "0.27.0"
+dialoguer = "0.11.0"
 termion = "2.0.1"
