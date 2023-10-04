@@ -7,10 +7,7 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe8ea1c4-99fd-4ebd-8930-c1f7869e1c9c" name="Changes" comment="V0.11">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
-    </list>
+    <list default="true" id="fe8ea1c4-99fd-4ebd-8930-c1f7869e1c9c" name="Changes" comment="V0.12" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,6 +87,15 @@
       <workItem from="1696210842394" duration="4083000" />
       <workItem from="1696296162796" duration="4480000" />
     </task>
+    <task id="LOCAL-00001" summary="V0.12">
+      <option name="closed" value="true" />
+      <created>1696379523153</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1696379523153</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -98,7 +104,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="V0.11" />
-    <option name="LAST_COMMIT_MESSAGE" value="V0.11" />
+    <MESSAGE value="V0.12" />
+    <option name="LAST_COMMIT_MESSAGE" value="V0.12" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
