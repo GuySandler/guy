@@ -37,11 +37,13 @@ fn main() {
 
         // commands
         if args[1] == "dir" {
+            println!("⇦: ..");
             for item in dirs {
                 println!("📁: {}", item);
             }
         }
         if args[1] == "fil" {
+            println!("⇦: ..");
             for item in files
             {
                 println!("📄: {}", item);
@@ -49,6 +51,7 @@ fn main() {
         }
     }
     else {
+        println!("⇦: ..");
         for item in dirs {
             println!("📁: {}", item);
         }
