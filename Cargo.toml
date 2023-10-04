@@ -4,3 +4,5 @@ version = "0.0.1"
 edition = "2021"
 
 [dependencies]
+clearscreen = "2.0.1"
+termion = "2.0.1"

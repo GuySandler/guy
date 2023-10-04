@@ -1,14 +1,20 @@
 use std::env;
-// use std::path::{PathBuf};
 use std::fs;
 use std::process::exit;
+use std::io::{stdin, stdout, Read, Write};
+use termion::event::Key;
+use termion::input::TermRead;
+use termion::raw::IntoRawMode;
+use std::process::Command;
 
-// use std::fs::ReadDir;
-// use colored::Colorize;
 fn main() {
-    // lists of items
+    // lists of menu
     let mut dirs: Vec<String> = vec![];
     let mut files: Vec<String> = vec![];
+    // menu
+    let mut menu: Vec<String> = vec![];
+    let mut selected:usize = 0;
+    // keyboard input
 
     // getting files in dir
     let current_dir = env::current_dir().unwrap();
@@ -39,24 +45,59 @@ fn main() {
         if args[1] == "dir" {
             println!("⇦: ..");
             for item in dirs {
-                println!("📁: {}", item);
+                // println!("📁: {}", item);
+                menu.push(format!("📁: {}", item))
             }
         }
         if args[1] == "fil" {
             println!("⇦: ..");
             for item in files
             {
-                println!("📄: {}", item);
+                // println!("📄: {}", item);
+                menu.push(format!("📄: {}", item))
             }
         }
     }
+    // no command
     else {
         println!("⇦: ..");
         for item in dirs {
-            println!("📁: {}", item);
+            // println!("📁: {}", item);
+            menu.push(format!("📁: {}", item))
         }
         for item in files {
-            println!("📄: {}", item);
+            // println!("📄: {}", item);
+            menu.push(format!("📄: {}", item))
         }
     }
+    // keyboard output format
+    loop {
+        menu = print_menu(menu, selected);
+        let stdin = stdin();
+        let mut stdout = stdout().into_raw_mode().unwrap();
+
+        for c in stdin.keys() {
+            match c.unwrap() {
+                Key::Up => {
+                    write!(stdout, "Up arrow key pressed!\r\n").unwrap();
+                    stdout.flush().unwrap();
+                }
+                Key::Esc => {
+                    break;
+                }
+                _ => {}
+            }
+        }
+        Command::new("cls").status().unwrap();
+    }
+}
+fn print_menu(menu: Vec<String>, selected: usize) -> Vec<String> {
+    for (i, item) in menu.iter().enumerate() {
+        if i == selected {
+            println!("> {}", item);
+        } else {
+            println!("  {}", item);
+        }
+    }
+    menu
 }
