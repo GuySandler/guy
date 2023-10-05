@@ -1,1 +1,1 @@
-sudo remove /usr/local/bin/
+sudo rm /usr/local/bin/guy

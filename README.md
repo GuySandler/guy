@@ -19,9 +19,11 @@
 
 🔆 Reads folders and labels them with icons in current directory
 
+🔆 Navigate between folders/files using arrow keys
+
 ## 📝 Features To Be Added (in order)
 
-✏ Navigate between folders/files using arrow keys/clicks maybe
+✏ A button to go back to the last folder (..)
 
 ✏ Open files
 
@@ -29,7 +31,7 @@
 
 ✏ Search for files or folder
 
-✏ A button to go back to the last folder (..)
+✏ Icons
 
 ## ⚙️ Installation and Updating (Linux)
 ### Using EZinstall
@@ -43,9 +45,23 @@
 3. >sudo chmod +x /usr/local/bin/guy
 
 ## ▹ How to run it
-in the directory you want to ls
+in the directory you want:
+
+menu with both files and folders
 ```bash
 $ guy
+```
+menu with only folders
+```bash
+$ guy dir
+```
+menu with only files
+```bash
+$ guy fil
+```
+no menu with both files and folders (will be reworked soon)
+```bash
+$ guy noui
 ```
 
 ## ❤️ Show your support
