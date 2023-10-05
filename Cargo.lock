@@ -182,6 +182,7 @@ dependencies = [
  "clearscreen",
  "crossterm",
  "dialoguer",
+ "libc",
  "termion",
 ]
 

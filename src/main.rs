@@ -1,17 +1,14 @@
 use std::env;
 use std::fs;
 use std::process::exit;
-// use crossterm::event::{read, Event, KeyCode, KeyEvent};
 use dialoguer::{theme::ColorfulTheme, Select};
-
 fn main() {
     // lists of menu
     let mut dirs: Vec<String> = vec![];
     let mut files: Vec<String> = vec![];
     // menu
-    let mut selection: &Vec<String> = &vec![];
-    let mut menu: &Vec<String> = &vec![];
-    let mut selected: usize = 0;
+    let mut menu: Vec<String> = vec!["🚪: exit".to_string(), "⇦: ..".to_string()];
+    let mut ui: bool = true;
 
     // getting files in dir
     let current_dir = env::current_dir().unwrap();
@@ -33,43 +30,44 @@ fn main() {
     let args: Vec<String> = env::args().collect();
     if args.len() != 1 {
         // check args
-        if args[1] == "dir" || args[1] == "fil" {} else {
+        if args[1] == "dir" || args[1] == "fil" || args[1] == "noui" {} else {
             println!("command not found");
             exit(1);
         }
 
         // commands
         if args[1] == "dir" {
-            println!("⇦: ..");
             for item in dirs {
-                // println!("📁: {}", item);
                 menu.push(format!("📁: {}", item))
             }
         }
-        if args[1] == "fil" {
-            println!("⇦: ..");
+        else if args[1] == "fil" {
             for item in files
             {
-                // println!("📄: {}", item);
+                menu.push(format!("📄: {}", item))
+            }
+        }
+        else if args[1] == "noui" {
+            ui = false;
+            for item in dirs {
+                menu.push(format!("📁: {}", item))
+            }
+            for item in files {
                 menu.push(format!("📄: {}", item))
             }
         }
     }
     // no command
     else {
-        println!("⇦: ..");
         for item in dirs {
-            // println!("📁: {}", item);
             menu.push(format!("📁: {}", item))
         }
         for item in files {
-            // println!("📄: {}", item);
             menu.push(format!("📄: {}", item))
         }
     }
-    // keyboard output format
-    // loop {
-        menu = print_menu(menu, selected);
+    // output format
+    if ui == true {
         let selection = Select::with_theme(&ColorfulTheme::default())
             .with_prompt("Pick your flavor")
             .default(0)
@@ -77,16 +75,12 @@ fn main() {
             .interact()
             .unwrap();
         println!("Enjoy your {}!", menu[selection]);
-    // }
-}
-fn print_menu(menu: &Vec<String>, selected: usize) -> &Vec<String> {
-    // function print_menu(menu)
-    for (i, item) in menu.iter().enumerate() {
-        if i == selected {
-            println!("> {}", item);
-        } else {
-            println!("  {}", item);
+    }
+    else if ui == false {
+        menu.remove(0);
+        menu.remove(0);
+        for item in menu {
+            println!("{}", item)
         }
     }
-    menu
 }
