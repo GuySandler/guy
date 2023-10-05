@@ -28,7 +28,7 @@
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="d929ce65-1290-4d64-8fea-b5170a82d0bb" />
+        <option name="accountId" value="fd7484cf-9f6c-439c-8eb4-5752793f6d3c" />
         <option name="url" value="https://github.com/GuySandler/guy.git" />
       </UrlAndAccount>
     </option>
@@ -116,7 +116,8 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="V0.11" />
     <MESSAGE value="V0.12" />
-    <option name="LAST_COMMIT_MESSAGE" value="V0.12" />
+    <MESSAGE value="V0.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="V0.2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
