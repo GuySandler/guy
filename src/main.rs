@@ -1,7 +1,7 @@
 use std::env;
 use std::fs;
 use std::process::exit;
-use std::path::{Path, PathBuf};
+use std::path::{Path};
 use dialoguer::{theme::ColorfulTheme, Select};
 
 fn main() {
@@ -19,14 +19,20 @@ fn main() {
 
             if menu[selection] == "🚪: exit".to_string() {
                 break;
-            } else if menu[selection] == "⇦: ..".to_string() {
+            }
+            else if menu[selection] == "⇦: ..".to_string() {
                 if let Some(parent_dir) = current_dir.parent() {
                     current_dir = parent_dir.to_path_buf();
                 }
             }
+            // else if menu[selection] == "🏠: stay".to_string() {
+            //     let (ret_val, stdout, stderr) = rash!(format!("cd {}", current_dir.to_string_lossy().to_string())).unwrap();
+            //     break
+            // }
         } else {
             menu.remove(0);
             menu.remove(0);
+            // menu.remove(0);
             for item in menu {
                 println!("{}", item)
             }
