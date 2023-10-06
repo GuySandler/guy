@@ -25,14 +25,12 @@ fn main() {
                     current_dir = parent_dir.to_path_buf();
                 }
             }
-            // else if menu[selection] == "🏠: stay".to_string() {
-            //     let (ret_val, stdout, stderr) = rash!(format!("cd {}", current_dir.to_string_lossy().to_string())).unwrap();
-            //     break
-            // }
+            else if menu[selection].chars().next() == Some('📁') {
+                current_dir.push(&menu[selection].chars().skip(3).collect::<String>());
+            }
         } else {
             menu.remove(0);
             menu.remove(0);
-            // menu.remove(0);
             for item in menu {
                 println!("{}", item)
             }
