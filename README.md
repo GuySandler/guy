@@ -4,16 +4,17 @@
     <img alt="Version" src="https://img.shields.io/github/release/GuySandler/guy.svg" onerror='this.onerror=undefined; this.src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000"'/>
   </a>
   <a href="https://github.com/GuySandler/guy//blob/main/LICENSE" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/github/license/GuySandler/guy?color=yellow" />
+    <img alt="Licensfolder_namee: MIT" src="https://img.shields.io/github/license/GuySandler/guy?color=green" />
   </a>
    <a href="https://github.com/GuySandler/guy/" target="_blank">
-    <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
+    <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-somewhat-yellow.svg" />
   </a>
 </p>
 
-> Interactive ls and nano command made in rust. This is just a project I'm doing to practice rust.
+> Interactive ls command made in rust. This is just a project I'm doing to practice rust.
 
-<!-- ![image](https://user-images.githubusercontent.com/78568641/167173566-8762a3a8-4dbf-492a-9883-f48760637bcd.png) -->
+# IMPORTANT
+I had to cut this short because I have other projects that need to be done, feel free to commit
 
 ## ⭐ Features Made
 
@@ -21,13 +22,14 @@
 
 🔆 Navigate between folders/files using arrow keys
 
-## 📝 Features To Be Added (in order)
-
 ✏ A button to go back to the last folder (..)
 
-✏ Open files
-
 ✏ Open folder to look in and an option to cd into it
+
+<!--## 📝 Features To Be Added (in order)-->
+## ❌ Cut features (for now)
+
+✏ Open files
 
 ✏ Search for files or folder
 
