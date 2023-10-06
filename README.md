@@ -22,9 +22,9 @@ I had to cut this short because I have other projects that need to be done, feel
 
 🔆 Navigate between folders/files using arrow keys
 
-✏ A button to go back to the last folder (..)
+🔆 A button to go back to the last folder (..)
 
-✏ Open folder to look in and an option to cd into it
+🔆 Open folder to look in and an option to cd into it
 
 <!--## 📝 Features To Be Added (in order)-->
 ## ❌ Cut features (for now)
